@@ -12,9 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Awaken stuff.
-$(call inherit-product, vendor/awaken/config/common_full_tablet_wifionly.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some common Rising stuff.
+$(call inherit-product, vendor/rising/config/rising.mk)
+
+RISING_CHIPSET := SDM860
+RISING_DEVICE := nabu
+#TARGET_FACE_UNLOCK_SUPPORTED := true
+#EXTRA_UDFPS_ANIMATIONS := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+RISING_MAINTAINER := Badr98-t
+WITH_GMS := true
+TARGET_BUILD_APERTURE_CAMERA := true
 
 # Inherit some common AOSP stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -23,7 +34,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit device configuration for nabu.
 $(call inherit-product, device/xiaomi/nabu/device.mk)
 
-PRODUCT_NAME := awaken_nabu
+PRODUCT_NAME := rising_nabu
 PRODUCT_DEVICE := nabu
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
